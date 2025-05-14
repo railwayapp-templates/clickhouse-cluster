@@ -1,0 +1,38 @@
+# global options
+{
+	admin off # theres no need for the admin api in railway's environment
+	persist_config off # storage isn't persistent anyway
+	auto_https off # railway handles https for us, this could in some cases cause issues if left enabled
+	# runtime logs
+	log {
+		format json # set runtime log format to json mode 
+	}
+	# server options
+	servers {
+		trusted_proxies static private_ranges # trust railway's proxy
+	}
+}
+
+(passive_health_checks) {
+	fail_duration 60s
+	max_fails 300
+	unhealthy_latency 5s
+	unhealthy_request_count 200
+}
+
+# site block, listens on the $PORT environment variable, automatically assigned by railway
+:{$PORT} {
+	# access logs
+	log {
+		format json # set access log format to json mode
+	}
+
+	# proxy all requests for /* to the frontend, configure these variables in the service settings
+	reverse_proxy {$CLICKHOUSE_01_01_HOST}:8123 {$CLICKHOUSE_02_01_HOST}:8123 {$CLICKHOUSE_03_01_HOST}:8123 {
+		# configure passive health checks
+		import passive_health_checks
+
+		# sets the Host header to the header to the dynamic name and port options
+		header_up Host {upstream_hostport}
+	}
+}

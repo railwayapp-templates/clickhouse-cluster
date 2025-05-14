@@ -1,0 +1,16 @@
+<clickhouse>
+    <zookeeper>
+        <node>
+            <host from_env="KEEPER_01_HOST"></host>
+            <port>9181</port>
+        </node>
+        <node>
+            <host from_env="KEEPER_02_HOST"></host>
+            <port>9181</port>
+        </node>
+        <node>
+            <host from_env="KEEPER_03_HOST"></host>
+            <port>9181</port>
+        </node>
+    </zookeeper>
+</clickhouse>
