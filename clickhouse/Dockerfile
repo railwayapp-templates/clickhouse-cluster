@@ -1,4 +1,4 @@
-# Keeper
+# ClickHouse
 
 FROM clickhouse:latest
 
