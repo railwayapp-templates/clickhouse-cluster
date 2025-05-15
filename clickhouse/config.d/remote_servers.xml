@@ -1,5 +1,5 @@
 <clickhouse>
-    <clickhouse_remote_servers >
+    <remote_servers >
         <local_cluster>
             <shard>
                 <weight>1</weight>
@@ -38,7 +38,7 @@
                 </replica>
             </shard>
         </local_cluster>
-    </clickhouse_remote_servers>
+    </remote_servers>
     <zookeeper-servers>
         <node index="1">
             <host from_env="KEEPER_01_HOST"></host>
