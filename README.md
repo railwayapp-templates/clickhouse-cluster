@@ -1,3 +1,3 @@
 # clickhouse-cluster
 
-3s2r_
+3s2r
