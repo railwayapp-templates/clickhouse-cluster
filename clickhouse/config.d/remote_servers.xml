@@ -1,5 +1,5 @@
 <clickhouse>
-    <remote_servers >
+    <remote_servers>
         <local_cluster>
             <shard>
                 <weight>1</weight>
