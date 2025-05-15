@@ -1,5 +1,5 @@
 <clickhouse>
-    <remote_servers >
+    <clickhouse_remote_servers >
         <local_cluster>
             <shard>
                 <weight>1</weight>
@@ -38,5 +38,19 @@
                 </replica>
             </shard>
         </local_cluster>
-    </remote_servers>
+    </clickhouse_remote_servers>
+    <zookeeper-servers>
+        <node index="1">
+            <host from_env="KEEPER_01_HOST"></host>
+            <port>2181</port>
+        </node>
+        <node index="2">
+            <host from_env="KEEPER_02_HOST"></host>
+            <port>2181</port>
+        </node>
+        <node index="3">
+            <host from_env="KEEPER_03_HOST"></host>
+            <port>2181</port>
+        </node>
+    </zookeeper-servers>
 </clickhouse>
