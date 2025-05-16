@@ -3,7 +3,7 @@
         <local_cluster>
             <shard>
                 <weight>1</weight>
-                <internal_replication>true</internal_replication>
+                <internal_replication>false</internal_replication>
                 <replica>
                     <host from_env="CLICKHOUSE_01_01_HOST"></host>
                     <port>9000</port>
@@ -15,7 +15,7 @@
             </shard>
             <shard>
                 <weight>1</weight>
-                <internal_replication>true</internal_replication>
+                <internal_replication>false</internal_replication>
                 <replica>
                     <host from_env="CLICKHOUSE_02_01_HOST"></host>
                     <port>9000</port>
@@ -27,7 +27,7 @@
             </shard>
             <shard>
                 <weight>1</weight>
-                <internal_replication>true</internal_replication>
+                <internal_replication>false</internal_replication>
                 <replica>
                     <host from_env="CLICKHOUSE_03_01_HOST"></host>
                     <port>9000</port>
@@ -39,18 +39,4 @@
             </shard>
         </local_cluster>
     </remote_servers>
-    <zookeeper-servers>
-        <node index="1">
-            <host from_env="KEEPER_01_HOST"></host>
-            <port>2181</port>
-        </node>
-        <node index="2">
-            <host from_env="KEEPER_02_HOST"></host>
-            <port>2181</port>
-        </node>
-        <node index="3">
-            <host from_env="KEEPER_03_HOST"></host>
-            <port>2181</port>
-        </node>
-    </zookeeper-servers>
 </clickhouse>

@@ -1,5 +1,4 @@
 <clickhouse>
-     <!-- Listen wildcard address to allow accepting connections from other containers and host network. -->
     <listen_host>::</listen_host>
     <listen_host>0.0.0.0</listen_host>
     <listen_try>1</listen_try>
@@ -10,18 +9,6 @@
 
         <formatting>
             <type>json</type>
-            <!-- <names>
-                <date_time>date_time</date_time>
-                <date_time_utc>date_time_utc</date_time_utc>
-                <thread_name>thread_name</thread_name>
-                <thread_id>thread_id</thread_id>
-                <level>level</level>
-                <query_id>query_id</query_id>
-                <logger_name>logger_name</logger_name>
-                <message>message</message>
-                <source_file>source_file</source_file>
-                <source_line>source_line</source_line>
-            </names> -->
         </formatting>
     </logger>
 

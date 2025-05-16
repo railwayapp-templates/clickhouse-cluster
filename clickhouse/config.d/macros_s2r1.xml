@@ -1,8 +1,0 @@
-<clickhouse>
-    <macros>
-        <installation>local_clickhouse</installation>
-        <cluster>local_cluster</cluster>
-        <shard>shard_2</shard>
-        <replica>replica_1</replica>
-    </macros>
-</clickhouse>

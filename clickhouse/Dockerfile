@@ -1,6 +1,6 @@
 # ClickHouse
 
-FROM clickhouse:latest
+FROM clickhouse:25.4
 
 COPY ./config.d/ /etc/clickhouse-server/config.d/
 
