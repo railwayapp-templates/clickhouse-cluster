@@ -2,4 +2,4 @@
 
 FROM clickhouse/clickhouse-keeper:25.4
 
-COPY ./config.d/config.xml /etc/clickhouse-keeper/
+COPY ./keeper/keeper_config.xml /etc/clickhouse-keeper/keeper_config.xml
