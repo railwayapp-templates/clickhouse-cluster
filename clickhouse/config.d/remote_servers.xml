@@ -7,10 +7,14 @@
                 <replica>
                     <host from_env="CLICKHOUSE_01_01_HOST"></host>
                     <port>9000</port>
+                    <user from_env="CH_USER"></user>
+                    <password from_env="CH_PASSWORD"></password>
                 </replica>
                 <replica>
                     <host from_env="CLICKHOUSE_01_02_HOST"></host>
                     <port>9000</port>
+                    <user from_env="CH_USER"></user>
+                    <password from_env="CH_PASSWORD"></password>
                 </replica>
             </shard>
             <shard>
@@ -19,10 +23,14 @@
                 <replica>
                     <host from_env="CLICKHOUSE_02_01_HOST"></host>
                     <port>9000</port>
+                    <user from_env="CH_USER"></user>
+                    <password from_env="CH_PASSWORD"></password>
                 </replica>
                 <replica>
                     <host from_env="CLICKHOUSE_02_02_HOST"></host>
                     <port>9000</port>
+                    <user from_env="CH_USER"></user>
+                    <password from_env="CH_PASSWORD"></password>
                 </replica>
             </shard>
             <shard>
@@ -31,10 +39,14 @@
                 <replica>
                     <host from_env="CLICKHOUSE_03_01_HOST"></host>
                     <port>9000</port>
+                    <user from_env="CH_USER"></user>
+                    <password from_env="CH_PASSWORD"></password>
                 </replica>
                 <replica>
                     <host from_env="CLICKHOUSE_03_02_HOST"></host>
                     <port>9000</port>
+                    <user from_env="CH_USER"></user>
+                    <password from_env="CH_PASSWORD"></password>
                 </replica>
             </shard>
         </local_cluster>
