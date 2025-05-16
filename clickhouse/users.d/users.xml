@@ -1,21 +1,19 @@
 <clickhouse>
     <users>
-        <clickhouse>
-	        <password from_env="CLICKHOUSE_PASSWORD"></password>
+        <default>
+	        <password from_env="CH_PASSWORD"></password>
             <profile>default</profile>
-            
-            <max_threads>32</max_threads>
-            <background_pool_size>32</background_pool_size>
-        </clickhouse>
+        </default>
     </users>
     
     <profiles>
         <default>
             <date_time_input_format>best_effort</date_time_input_format>
             <load_balancing>in_order</load_balancing>
-            <insert_distributed_sync>1</insert_distributed_sync>
+            <async_insert>1</async_insert>
 
             <max_threads>16</max_threads>
+            <background_pool_size>32</background_pool_size>
             <min_insert_block_size_rows>10000</min_insert_block_size_rows>
             <min_insert_block_size_bytes>10485760</min_insert_block_size_bytes>
             <max_insert_block_size>1048576</max_insert_block_size>

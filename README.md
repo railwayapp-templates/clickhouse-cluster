@@ -1,3 +1,3 @@
-# clickhouse-cluster
+# ClickHouse Cluster
 
-3s2r
+A simple ClickHouse cluster with 3 shards, 2 replicas, and 3 keepers.
