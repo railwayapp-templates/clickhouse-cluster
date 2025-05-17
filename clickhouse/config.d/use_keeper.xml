@@ -13,4 +13,8 @@
             <port>2181</port>
         </node>
     </zookeeper>
+
+    <distributed_ddl>
+        <path>/clickhouse/local_cluster/task_queue/ddl</path>
+    </distributed_ddl>
 </clickhouse>

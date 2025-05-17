@@ -2,6 +2,10 @@
 
 FROM clickhouse:25.4
 
+ARG CLICKHOUSE_HOSTNAME
+
+ENV HOSTNAME=$CLICKHOUSE_HOSTNAME
+
 ENV CLICKHOUSE_SKIP_USER_SETUP=1
 
 COPY ./config.d/ /etc/clickhouse-server/config.d/
