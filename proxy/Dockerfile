@@ -1,11 +1,9 @@
 # Proxy
 
-FROM caddy:latest
+FROM haproxytech/haproxy-alpine:2.4
 
 WORKDIR /app
 
-COPY Caddyfile ./
+COPY haproxy.cfg ./
 
-RUN caddy fmt --overwrite Caddyfile
-
-ENTRYPOINT ["caddy", "run", "--config", "Caddyfile", "--adapter", "caddyfile"]
+ENTRYPOINT ["haproxy", "-f", "haproxy.cfg"]
