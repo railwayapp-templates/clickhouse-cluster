@@ -9,15 +9,15 @@ KEEPER_HOSTS=($KEEPER_01_HOST $KEEPER_02_HOST $KEEPER_03_HOST)
 echo "Waiting for All ClickHouse Keepers to be ready..."
 
 for host in "${KEEPER_HOSTS[@]}"; do
-    echo "Waiting for $host:9234 to be ready"
+    echo "Waiting for $host:2181 to be ready"
     
     while true; do
-        if nc -z $host 9234; then
-            echo "$host:9234 is ready"
+        if nc -z $host 2181; then
+            echo "$host:2181 is ready"
             break
         fi
 
-        echo "Still waiting for $host:9234..."
+        echo "Still waiting for $host:2181..."
 
         sleep 1
     done
