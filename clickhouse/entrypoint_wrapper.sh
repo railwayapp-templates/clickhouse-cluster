@@ -12,15 +12,16 @@ for host in "${KEEPER_HOSTS[@]}"; do
     
     while true; do
         # First check if the port is open
-        if nc -z $host 2181; then
+        if nc -w 1 -z $host 2181; then
             # Now check if the service is actually ready using the 'ruok' command
-            if echo "ruok" | nc -q 1 $host 2181 | grep -q "imok"; then
+            if echo "ruok" | nc -w 1 -q 1 $host 2181 | grep -q "imok"; then
                 echo "$host:2181 is ready"
                 break
             fi
         fi
         
         echo "Still waiting for $host:2181..."
+        
         sleep 1
     done
 done

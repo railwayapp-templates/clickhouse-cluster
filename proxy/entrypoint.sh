@@ -11,9 +11,9 @@ for host in "${CLICKHOUSE_HOSTS[@]}"; do
     
     while true; do
         # First check if the port is open
-        if nc -z $host 8123; then
+        if nc -w 1 -z $host 8123; then
             # Now check if the service is actually ready using the replicas_status endpoint
-            http_status=$(curl -s -o /dev/null -w "%{http_code}" "http://$host:8123/replicas_status")
+            http_status=$(curl --max-time 1 -s -o /dev/null -w "%{http_code}" "http://$host:8123/replicas_status")
             if [ "$http_status" -eq 200 ]; then
                 echo "$host:8123 is ready"
                 break
