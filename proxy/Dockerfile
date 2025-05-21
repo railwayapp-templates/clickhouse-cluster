@@ -1,9 +1,18 @@
 # Proxy
 
-FROM haproxytech/haproxy-alpine:2.4
+FROM haproxy:3.1.7
+
+USER root
+
+RUN apt-get update && apt-get -y --no-install-recommends install \
+    netcat-openbsd \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 COPY haproxy.cfg ./
 
-ENTRYPOINT ["haproxy", "-f", "haproxy.cfg"]
+COPY --chmod=755 entrypoint.sh ./
+
+ENTRYPOINT ["./entrypoint.sh"]
