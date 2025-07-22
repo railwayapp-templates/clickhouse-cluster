@@ -15,7 +15,6 @@
     <max_concurrent_queries>10000</max_concurrent_queries>
     <max_concurrent_insert_queries>10000</max_concurrent_insert_queries>
     <max_concurrent_select_queries>10000</max_concurrent_select_queries>
-    <max_concurrent_queries_for_all_users>100000</max_concurrent_queries_for_all_users>
 
     <logger>
         <level>information</level>

@@ -18,6 +18,7 @@
             <min_insert_block_size_bytes>10485760</min_insert_block_size_bytes>
             <max_insert_block_size>1048576</max_insert_block_size>
             <max_memory_usage>8589934592</max_memory_usage>
+            <max_concurrent_queries_for_all_users>100000</max_concurrent_queries_for_all_users>
         </default>
     </profiles>
 </clickhouse>
