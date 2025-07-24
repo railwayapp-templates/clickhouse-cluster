@@ -1,6 +1,6 @@
 # Proxy
 
-FROM haproxy:3.1.7
+FROM haproxy:latest
 
 USER root
 
