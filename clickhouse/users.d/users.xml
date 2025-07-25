@@ -9,8 +9,14 @@
     <profiles>
         <default>
             <date_time_input_format>best_effort</date_time_input_format>
-            <load_balancing>in_order</load_balancing>
+
+            <distributed_replica_max_ignored_errors>1000</distributed_replica_max_ignored_errors>
+            <distributed_replica_error_half_life>10</distributed_replica_error_half_life>
+
+            <load_balancing>random</load_balancing>
+
             <async_insert>1</async_insert>
+            <async_insert_busy_timeout_max_ms>500</async_insert_busy_timeout_max_ms>
 
             <max_threads>16</max_threads>
             <background_pool_size>32</background_pool_size>
